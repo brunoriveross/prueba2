@@ -1,0 +1,11 @@
+{ "alumno":[
+    {
+      "id": 1,
+      "nombre": "Don Pepe",
+      "correo": "donpepe@gmail.com",
+      "contraseña": "pepedon123",
+      "carrera": "Analista Programador Computacional",
+      "foto": ""
+    }
+  ]
+}

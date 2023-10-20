@@ -1,0 +1,23 @@
+.header-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Ajusta el margen según sea necesario */
+  }
+  
+  .small-logo {
+    width: 80px; /* Puedes ajustar el valor según tu preferencia */
+    height: auto; /* Esto mantiene la proporción original de la imagen */
+  }
+  
+  #titulo {
+    width: 115px; /* Ajusta el ancho del título según sea necesario */
+  }
+  ion-card-content{
+    background-color: rgb(214, 223, 223);
+    border-radius: 15px;
+  }  

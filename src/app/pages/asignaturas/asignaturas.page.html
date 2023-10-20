@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- BOTON MENU-->
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="true"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Asignaturas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content>
+    <!-- Carta -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Asignaturas</ion-card-title>
+
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <!-- <ion-item> 
+            <ion-thumbnail slot="start">
+              <img src="https://i.ytimg.com/vi/p2IFIGChjRg/maxresdefault.jpg" />
+            </ion-thumbnail>
+            <ion-label>
+              <h2>nombre:  </h2>
+              <p class="seccion">sección:</p>
+              <p class="seccion">Profesor: pepe </p>
+            </ion-label>
+          </ion-item> -->
+
+          <ion-item *ngFor="let asignatura of asignaturas" >
+            <ion-label>
+              <h2>{{ asignatura.nombre }}</h2>
+              <p >{{ asignatura.seccion }}</p>
+            </ion-label>
+            
+            
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+      <ion-button (click)="navigateToDetalle()" shape="round" class="centered">detalle</ion-button>
+    </ion-card>
+
+  </ion-content>

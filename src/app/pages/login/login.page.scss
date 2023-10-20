@@ -1,0 +1,37 @@
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  ion-card {
+    max-width: 400px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  ion-card-title {
+    font-size: 24px;
+    color: #333; /* Color de texto personalizado */
+  }
+  
+  ion-card-content {
+    margin-top: 20px;
+  }
+  
+  ion-button {
+    background-color: #007bff; /* Color de fondo personalizado */
+    color: #fff; /* Color de texto personalizado */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  ion-button:hover {
+    background-color: #0056b3; /* Color de fondo personalizado al pasar el cursor */
+  }
+  
+  /* Añade más estilos según tus preferencias */
+  
