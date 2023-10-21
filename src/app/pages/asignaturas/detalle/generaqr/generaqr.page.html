@@ -11,6 +11,16 @@
   </ion-toolbar> 
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content >
 
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+      <qrcode 
+        [qrdata]="qrCodeString" 
+        [width]="256" 
+        [errorCorrectionLevel]="'M'">
+      </qrcode>
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>

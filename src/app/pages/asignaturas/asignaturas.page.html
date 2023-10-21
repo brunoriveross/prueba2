@@ -17,30 +17,17 @@
 
       </ion-card-header>
       <ion-card-content>
-        <ion-list>
-          <!-- <ion-item> 
-            <ion-thumbnail slot="start">
-              <img src="https://i.ytimg.com/vi/p2IFIGChjRg/maxresdefault.jpg" />
-            </ion-thumbnail>
-            <ion-label>
-              <h2>nombre:  </h2>
-              <p class="seccion">sección:</p>
-              <p class="seccion">Profesor: pepe </p>
-            </ion-label>
-          </ion-item> -->
+<ion-list>
+  <ion-item *ngFor="let asignatura of asignaturas" [routerLink]="['/asignaturas/detalle', asignatura.id]">
+    <ion-label>
+      <h2>{{ asignatura.nombre }}</h2>
+      <p>{{ asignatura.seccion }}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>
 
-          <ion-item *ngFor="let asignatura of asignaturas" >
-            <ion-label>
-              <h2>{{ asignatura.nombre }}</h2>
-              <p >{{ asignatura.seccion }}</p>
-            </ion-label>
-            
-            
-          </ion-item>
-
-        </ion-list>
       </ion-card-content>
-      <ion-button (click)="navigateToDetalle()" shape="round" class="centered">detalle</ion-button>
+ <ion-button (click)="navigateTodetalle()" shape="round" class="centered">Detalle</ion-button>
     </ion-card>
 
   </ion-content>

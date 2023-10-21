@@ -19,7 +19,11 @@ export class ApibdService {
     return this.http.get<Ialumnos>(`${this.apiURL}/alumnos`);
   }
 
-  getAsignaturas(): Observable<Iasignaturas>  {
+  ListAsignaturas(): Observable<Iasignaturas>  {
     return this.http.get<Iasignaturas>(`${this.apiURL}/asignatura`);
+  }
+
+  getAsignatura(id: Number): Observable<Iasignaturas> {
+    return this.http.get<Iasignaturas>(`${this.apiURL}/asignatura/?id=${id}`);
   }
 }

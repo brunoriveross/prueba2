@@ -20,7 +20,7 @@ export class AsignaturasPage implements OnInit {
   ) { }
 
   ionViewWillEnter() {
-    this.ApibdService.getAsignaturas().subscribe((data: any) => {
+    this.ApibdService.ListAsignaturas().subscribe((data: any) => {
       this.asignaturas = data;
     },
     (error) => {
@@ -29,17 +29,17 @@ export class AsignaturasPage implements OnInit {
   }
 
   ngOnInit() {
-    this.ApibdService.getAsignaturas().subscribe((data: any) => {
+    this.ApibdService.ListAsignaturas().subscribe((data: any) => {
       this.asignaturas = data;
     },
     (error) => {
       console.error('Error al cargar asignaturas:', error);
     });
   }
-
-  navigateToDetalle() {
+  navigateTodetalle() {
     // Navegar a la página de detalle dentro del módulo de asignaturas
     this.router.navigate(['asignaturas/detalle']);
   }
+
 
 }

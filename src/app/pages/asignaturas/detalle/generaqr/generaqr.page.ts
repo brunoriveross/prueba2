@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneraqrPage implements OnInit {
 
+  qrCodeString = 'This is a secret qr code message';
+
   constructor() { }
 
   ngOnInit() {

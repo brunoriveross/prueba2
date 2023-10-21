@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LectorqrPage implements OnInit {
 
+  scannedResult: any;
+  content_visibility = '';
+  
   constructor() { }
 
   ngOnInit() {
