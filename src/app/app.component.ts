@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+
+
   public appPages = [
     { title: 'Home', url: 'home', icon: 'home' },
     { title: 'Asignaturas', url: 'asignaturas', icon: 'book' },
@@ -31,7 +33,10 @@ export class AppComponent {
 
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+   
+  }
+
 
   mostrarMenuProfesor() {
     return this.router.url !== '/login';
@@ -41,10 +46,6 @@ export class AppComponent {
     return this.router.url !== '/login';
   }
 
-  mostrarMenuApi() {
-    const aux = ['homeprofe','apiadd','apidelete','apiupdate','apilist','apidetail']
-    return aux.includes(this.router.url.substring(1)) // ELIMINAMOS EL "/"
-    //return this.router.url == '/apihome';
-  }
+
   
 }
