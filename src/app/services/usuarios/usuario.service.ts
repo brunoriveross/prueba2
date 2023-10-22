@@ -5,27 +5,22 @@ import { Usuario } from 'src/app/pages/usuario/usuario.model';
   providedIn: 'root'
 })
 export class UsuarioService {
-
-  usuarios: Usuario[] = [
-    {
-      id: '1',
-      usuario: 'panshoots',
-      contrasenia: '123456'
-    }
-  ]
+  private usuarios: Usuario[] = [];
 
   constructor() { }
 
-
-getAll() {
-  return [...this.usuarios]
-}
-
-getUser(user: string, pass: string) {
-  return {
-    ...this.usuarios.find(aux => {
-      return aux.usuario === user && aux.contrasenia === pass
-    })
+  // Método para almacenar el usuario obtenido en LoginPage
+  setUsuario(usuario: Usuario) {
+    this.usuarios.push(usuario);
   }
-}
+
+  // Método para obtener un usuario por nombre de usuario y contraseña
+  getUser(user: string, pass: string) {
+    return this.usuarios.find(aux => aux.usuario === user && aux.contrasenia === pass);
+  }
+
+  // Método para obtener todos los usuarios
+  getAll() {
+    return this.usuarios;
+  }
 }

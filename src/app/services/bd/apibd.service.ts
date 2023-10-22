@@ -15,8 +15,8 @@ export class ApibdService {
   apiURL = 'https://apiappmovil.onrender.com'
   constructor(private http: HttpClient) { }
 
-  listAlumnos(): Observable<Ialumnos> {
-    return this.http.get<Ialumnos>(`${this.apiURL}/alumnos`);
+  listAlumnos(): Observable<Ialumnos[]> {
+    return this.http.get<Ialumnos[]>(`${this.apiURL}/alumnos`);
   }
 
   ListAsignaturas(): Observable<Iasignaturas>  {
@@ -25,5 +25,9 @@ export class ApibdService {
 
   getAsignatura(id: Number): Observable<Iasignaturas> {
     return this.http.get<Iasignaturas>(`${this.apiURL}/asignatura/?id=${id}`);
+  }
+
+  getUserByEmail(email: string): Observable<Ialumnos> {
+    return this.http.get<Ialumnos>(`${this.apiURL}/alumnos?correo=${email}`);
   }
 }

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MenuController, ToastController } from '@ionic/angular';
-import { ApiService } from 'src/app/services/api/api.service';
+import { MenuController } from '@ionic/angular';
 import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
 import { Usuario } from 'src/app/pages/usuario/usuario.model';
+import { MensajeService } from 'src/app/services/mensajes/mensaje.service';
+import { ApibdService } from 'src/app/services/bd/apibd.service';
 
 @Component({
   selector: 'app-login',
@@ -22,10 +23,10 @@ export class LoginPage implements OnInit {
   constructor(
     private router: Router,
     private usuarioService: UsuarioService,
-    private toastController: ToastController,
     private menu: MenuController,
     private formBuilder: FormBuilder,
-    private userrandom: ApiService
+    private apiService: ApibdService, // Cambia la importación para usar tu propio servicio de API
+    private mensajeUtil: MensajeService
   ) { 
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -34,29 +35,26 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    this.mensajeUtil.mensajeToast('info', 'Ingrese Sus Datos', 2000, 'bottom');
     this.menu.enable(true);
-    this.userrandom.getRandomUser().subscribe((data) => {
-      console.log(data)
-      this.user = data.results[0];
-      this.emailValue = this.user.email;
-      this.passValue = this.user.login.password;
-      console.log(this.user.email + " " + this.user.login.password)
-    })
+
+    // Llama a tu servicio para obtener datos de la API en lugar de userrandom
+    this.apiService.listAlumnos().subscribe((alumnos) => {
+      if (alumnos.length > 0) {
+        const firstAlumno = alumnos[0]; // Obtén el primer alumno, puedes ajustar la lógica de selección según tus necesidades
+        this.emailValue = firstAlumno.correo;
+        this.passValue = firstAlumno.contraseña;
+        console.log(this.emailValue + ' ' + this.passValue);
+      }
+    });
   }
 
   login(user:any, pass:any) {
     this.usuarioService.getUser(user.value, pass.value);
-    this.mensajeToast("Bienvenido al Sistema!");
     this.router.navigate(['home']);
+    this.mensajeUtil.mensajeToast('success','Bienvenido al Sistema',2000,'bottom')
   }
-  async mensajeToast(mensaje: string) {
-    const toast = await this.toastController.create({
-      message: mensaje,
-      duration: 2000,
-      position: 'bottom'
-    });
-    toast.present()
-  }
+
 
 }
 

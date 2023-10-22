@@ -39,7 +39,11 @@ const routes: Routes = [
   {
     path: 'lectorqr',
     loadChildren: () => import('./pages/lectorqr/lectorqr.module').then( m => m.LectorqrPageModule)
+  },  {
+    path: 'alumno',
+    loadChildren: () => import('./pages/alumno/alumno.module').then( m => m.AlumnoPageModule)
   },
+
 
 ];
 
