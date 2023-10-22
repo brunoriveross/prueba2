@@ -12,13 +12,11 @@ export class AppComponent {
     { title: 'Home', url: 'home', icon: 'home' },
     { title: 'Asignaturas', url: 'asignaturas', icon: 'book' },
     { title: 'Escanear QR', url: 'lectorqr', icon: 'qr-code' },
-    { title: 'alumno', url: 'alumno', icon: 'qr-code' },
     { title: 'Cerrar Session ', url: 'login', icon: 'log-out' },
   ];
   public appprofe = [
     { title: 'Home', url: 'home', icon: 'home' },
     { title: 'Asignaturas', url: 'asignaturas', icon: 'book' },
-    { title: 'alumno', url: 'alumno', icon: 'qr-code' },
     { title: 'Cerrar Sesión', url: 'login', icon: 'log-out' },
   ];
 
@@ -26,7 +24,6 @@ export class AppComponent {
     { title: 'Home', url: 'home', icon: 'home' },
     { title: 'Asignaturas', url: 'asignaturas', icon: 'book' },
     { title: 'Escanear QR', url: 'lectorqr', icon: 'qr-code' },
-    { title: 'alumno', url: 'alumno', icon: 'qr-code' },
     { title: 'Cerrar Sesión', url: 'login', icon: 'log-out' },
   ];
 

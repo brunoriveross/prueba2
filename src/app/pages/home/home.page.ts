@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +10,10 @@ export class HomePage implements OnInit {
     emailValue: string | undefined;
   passValue: string | undefined;
 
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.emailValue = this.userService.emailValue;
-    this.passValue = this.userService.passValue;
+
     
   }
 

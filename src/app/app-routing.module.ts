@@ -33,18 +33,12 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path: 'usuario',
-    loadChildren: () => import('./pages/usuario/usuario.module').then( m => m.UsuarioPageModule)
-  },
+  
   {
     path: 'lectorqr',
     loadChildren: () => import('./pages/lectorqr/lectorqr.module').then( m => m.LectorqrPageModule)
   },
-  {
-    path: 'alumno',
-    loadChildren: () => import('./pages/alumno/alumno.module').then( m => m.AlumnoPageModule)
-  },
+
 
 
 

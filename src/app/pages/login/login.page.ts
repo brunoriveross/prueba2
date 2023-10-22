@@ -5,7 +5,7 @@ import { MenuController } from '@ionic/angular';
 import { MensajeService } from 'src/app/services/mensajes/mensaje.service';
 import { ApibdService } from 'src/app/services/bd/apibd.service';
 import { forkJoin } from 'rxjs';
-import { UserService } from 'src/app/user.service';
+
 
 
 @Component({
@@ -22,16 +22,12 @@ export class LoginPage implements OnInit {
 
   profesorButtonHidden: boolean = false; // Inicialmente oculto
 
-
-
-
   constructor(
     private router: Router,
     private menu: MenuController,
     private formBuilder: FormBuilder,
     private apiService: ApibdService,
     private mensajeUtil: MensajeService,
-    private userService: UserService
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -94,8 +90,7 @@ export class LoginPage implements OnInit {
       ]).subscribe(([alumnos, profesores]) => {
         // Verifica si el usuario es un alumno
         const alumno = alumnos.find(alumno => alumno.correo === email && alumno.contraseña === password);
-        this.userService.emailValue = this.emailValue;
-        this.userService.passValue = this.passValue;
+
         if (alumno) {
           this.userRole = 'alumno';
 
