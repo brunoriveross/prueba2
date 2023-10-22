@@ -19,6 +19,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
+  
   {
     path: 'asignaturas',
     children: [
@@ -39,10 +40,13 @@ const routes: Routes = [
   {
     path: 'lectorqr',
     loadChildren: () => import('./pages/lectorqr/lectorqr.module').then( m => m.LectorqrPageModule)
-  },  {
+  },
+  {
     path: 'alumno',
     loadChildren: () => import('./pages/alumno/alumno.module').then( m => m.AlumnoPageModule)
   },
+
+
 
 
 ];

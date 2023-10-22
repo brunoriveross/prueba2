@@ -1,9 +1,9 @@
 <ion-header>
 </ion-header>
 
-<ion-content  >
-  <div  class="centered">
-    <ion-card >
+<ion-content>
+  <div class="centered">
+    <ion-card>
       <img alt="LOGIs" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/2560px-Logo_DuocUC.svg.png" />
       <ion-card-header>
         <ion-card-title>Ingreso</ion-card-title>
@@ -12,23 +12,28 @@
         <ion-item>
           <ion-input #user [(ngModel)]="emailValue" formControlName="email" label="Ingrese Usuario:" labelPlacement="floating" placeholder="Ej: panshoots"></ion-input>
         </ion-item>
-        <ion-text pasition="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')">
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')">
           El correo es obligatorio.
         </ion-text>
-        <ion-text pasition="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')">
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')">
           El correo es inválido.
         </ion-text>
         <ion-item>
           <ion-input #pass type="password" [(ngModel)]="passValue" formControlName="password" label="Ingrese Contraseña:" labelPlacement="floating" placeholder="Ej: 123456"></ion-input>
         </ion-item>
-        <ion-text pasition="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')">
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')">
           La contraseña es obligatoria.
         </ion-text>
-        <ion-text pasition="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('minlength')">
-          La contraseña debe tener almenos 6 caracteres.
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('minlength')">
+          La contraseña debe tener al menos 6 caracteres.
         </ion-text>
-        <ion-button (click)="login(user,pass)" [disabled]="!loginForm.valid">Ingresar</ion-button>
-        
+        <ion-button (click)="login()" [disabled]="!loginForm.valid">Ingresar</ion-button>
+        <ion-button (click)="setProfesorData()" [class.hidden]="profesorButtonHidden">Cargar Datos de Profesor</ion-button>
+
+
+
+
+
       </ion-card-content>
     </ion-card>
   </div>

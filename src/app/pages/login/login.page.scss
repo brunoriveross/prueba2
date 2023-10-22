@@ -34,4 +34,9 @@
   }
   
   /* Añade más estilos según tus preferencias */
+  .hidden {
+    visibility: hidden;  /* Mantiene el espacio pero oculta visualmente el elemento */
+    opacity: 0;          /* Hace el elemento completamente transparente */
+    pointer-events: auto; /* Permite que el elemento siga siendo interactivo */
+  }
   

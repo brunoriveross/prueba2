@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ialumnos } from 'src/app/interfaces/ialumnos';
-//import { Ialumno } from 'src/app/interfaces/ialumnos';
+
 import { Observable } from 'rxjs';
 import { Iasignaturas } from 'src/app/interfaces/iasignaturas';
+import { Iprofesores } from 'src/app/interfaces/iprofesores';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,11 @@ export class ApibdService {
 
   listAlumnos(): Observable<Ialumnos[]> {
     return this.http.get<Ialumnos[]>(`${this.apiURL}/alumnos`);
+  }
+
+  listProfes(): Observable<Iprofesores[]> {
+
+    return this.http.get<Iprofesores[]>(`${this.apiURL}/profe`);
   }
 
   ListAsignaturas(): Observable<Iasignaturas>  {
